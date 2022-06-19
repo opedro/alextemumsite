@@ -1,0 +1,13 @@
+
+{
+  "name": "alextemumsite",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+     "test": "html-validate index.html"
+  },
+  "author": "",
+  "dependencies": {
+    "html-validate": "^7.1.1"
+  }
+}
