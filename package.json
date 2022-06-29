@@ -7,7 +7,7 @@
      "html-lint": "html-validate index.html",
      "test-links": "node link.test.js",
      "test": "npm run html-lint && npm run test-links"
-  },link.test.js
+  },
   "author": "",
   "dependencies": {
     "html-validate": "^7.1.1"
