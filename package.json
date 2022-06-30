@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-     "test": "html-validate index.html"
+     "html-lint": "html-validate index.html",
+     "test-links": "node link.test.js",
+     "test": "npm run html-lint && npm run test-links"
   },
   "author": "",
   "dependencies": {
