@@ -14,7 +14,21 @@ fs.readFile('index.html', 'utf8', (err, data) => {
         .filter(a => !a.trim() == "")
         .map(a => a.split('<a href="')[1].split('">')[0]);
 
-    const invalidLink = linkList.filter(a => !validator.test(a))
+    const invalidLink = linkList.filter(a => {
+        let valid = !validator.test(a);
+        if (!valid)
+            return valid;
+        else {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", a, false ); 
+            xmlHttp.send( null );
+            let page = xmlHttp.responseText;
+             if(page.find('Page not found'))
+                return false;
+            else
+                return true;
+        }
+    })
     if(invalidLink.length > 0){
         const errorMessage = "this links are invalid: " + invalidLink.join();
         console.error(errorMessage)
